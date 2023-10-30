@@ -5,6 +5,7 @@ import { PublicationNavbarItem } from '../generated/graphql';
 import { Button } from './button';
 import { Container } from './container';
 import { useAppContext } from './contexts/appContext';
+import Image from 'next/image';
 
 function hasUrl(
 	navbarItem: PublicationNavbarItem,
@@ -90,7 +91,7 @@ export const Header = () => {
 						>
 							{PUBLICATION_LOGO ? (
 								<>
-									<img
+									<Image
 										className="block w-32 shrink-0 md:w-40"
 										alt={publication.title}
 										src={resizeImage(PUBLICATION_LOGO, { w: 320, h: 80 })}
@@ -105,10 +106,10 @@ export const Header = () => {
 						</Link>
 					</h1>
 				</div>
-				<div className="col-span-2 flex flex-row items-center justify-end gap-5 text-slate-300 lg:col-span-3">
+				{/* <div className="col-span-2 flex flex-row items-center justify-end gap-5 text-slate-300 lg:col-span-3">
 					<nav className="hidden lg:block">{navList}</nav>
 					<Button href={baseUrl} as="a" type="primary" label="Book a demo" />
-				</div>
+				</div> */}
 			</Container>
 		</header>
 	);
